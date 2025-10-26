@@ -1,0 +1,48 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+# If you use a lockfile you want, keep it committed (uncomment if needed)
+# yarn.lock
+
+# TypeScript / build
+dist/
+build/
+lib/
+*.tsbuildinfo
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-workspace
+
+# macOS
+.DS_Store
+
+# Env files
+.env
+.env.*
+
+# Playwright / test outputs
+playwright-report/
+test-results/
+
+# Allure reports & results
+allure-results/
+allure-reports/
+generated-allure-report*/
+
+# Coverage
+coverage/
+.nyc_output/
+
+# Misc
+.cache/
+*.log
+*.tmp
+*.zip
+
+# Optional: ignore npm package tarballs
+*.tgz
