@@ -95,7 +95,3 @@ export const CommonLocators = {
 };
 
 
-
-
-//div[contains(@class, "container")][contains(@id, "state")]
-//div[contains(@class, "container")][contains(@id, "city")]

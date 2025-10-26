@@ -5,96 +5,107 @@
  * Each locator is a function that returns a selector string
  * based on the provided parameter.
  */
-
 export const SelectMenuPageLocators = {
-    
-    dropdownOldLocator: (dropdownLabel: string): string => `//div[div[contains(text(), "${dropdownLabel}")]]/following-sibling::div[1]//select`,
 
-    dropdownReactLocator: (dropdownLabel: string): string => `//div[div[contains(text(), "${dropdownLabel}")]]/following-sibling::div[1]/div/div`,
+  /**
+   * Locator for old-style dropdowns (native <select>) by label.
+   *
+   * Usage:
+   *   const locator = SelectMenuPageLocators.dropdownOldLocator("Color");
+   *   await page.selectOption(locator, "Red");
+   *
+   * @param {string} dropdownLabel - The label text of the dropdown.
+   * @returns {string} XPath locator for the native <select> dropdown.
+   */
+  dropdownOldLocator: (dropdownLabel: string): string =>
+    `//div[div[contains(text(), "${dropdownLabel}")]]/following-sibling::div[1]//select`,
 
-    dropdownMultiSelectLocator: (dropdownLabel: string): string => `//p[b[contains(text(), "${dropdownLabel}")]]/following-sibling::div[contains(@class, "container")]`,
-    
-    dropdownReactOptionsLocator: (): string => `//div[contains(@id,"react-select") and contains(@class,"option")]`,
+  /**
+   * Locator for React dropdowns by label (clickable divs).
+   *
+   * Usage:
+   *   const locator = SelectMenuPageLocators.dropdownReactLocator("Select Value");
+   *   await page.click(locator);
+   *
+   * @param {string} dropdownLabel - The label text of the React dropdown.
+   * @returns {string} XPath locator for the React dropdown container.
+   */
+  dropdownReactLocator: (dropdownLabel: string): string =>
+    `//div[div[contains(text(), "${dropdownLabel}")]]/following-sibling::div[1]/div/div`,
 
-    reactOptionsLocator: (option: string): string => `//div[contains(@id,"react-select") and contains(@class,"option")][normalize-space(.)="${option}"]`,
-    
-    reactTagOptionLocator: (option: string): string => `.css-1rhbuit-multiValue >> text=${option}`,
+  /**
+   * Locator for multi-select dropdowns by label.
+   *
+   * Usage:
+   *   const locator = SelectMenuPageLocators.dropdownMultiSelectLocator("Cars");
+   *   await page.click(locator);
+   *
+   * @param {string} dropdownLabel - The label text of the multi-select dropdown.
+   * @returns {string} XPath locator for the multi-select dropdown container.
+   */
+  dropdownMultiSelectLocator: (dropdownLabel: string): string =>
+    `//p[b[contains(text(), "${dropdownLabel}")]]/following-sibling::div[contains(@class, "container")]`,
 
-    reactSelectedOptionLocator: (dropdownLabel: string): string => `//div[div[contains(text(), "${dropdownLabel}")]]/following-sibling::div[1]//div[contains(@class, "singleValue")]`,
+  /**
+   * Locator for all React dropdown options.
+   *
+   * Usage:
+   *   const options = await page.$$(SelectMenuPageLocators.dropdownReactOptionsLocator());
+   *
+   * @returns {string} XPath locator for all React dropdown options.
+   */
+  dropdownReactOptionsLocator: (): string =>
+    `//div[contains(@id,"react-select") and contains(@class,"option")]`,
 
-    dropdownStandardLocator: (dropdownLabel: string): string => `//div[p[b[contains(text(), "${dropdownLabel}")]]]/select`,
-    
-    
+  /**
+   * Locator for a specific React option by visible text.
+   *
+   * Usage:
+   *   const locator = SelectMenuPageLocators.reactOptionsLocator("Green");
+   *   await page.click(locator);
+   *
+   * @param {string} option - The visible text of the React option.
+   * @returns {string} XPath locator for the specific React option.
+   */
+  reactOptionsLocator: (option: string): string =>
+    `//div[contains(@id,"react-select") and contains(@class,"option")][normalize-space(.)="${option}"]`,
 
+  /**
+   * Locator for selected tag in a React multi-select dropdown.
+   *
+   * Usage:
+   *   const locator = SelectMenuPageLocators.reactTagOptionLocator("Green");
+   *   const tagText = await page.textContent(locator);
+   *
+   * @param {string} option - The visible text of the tag option.
+   * @returns {string} CSS locator for the selected tag.
+   */
+  reactTagOptionLocator: (option: string): string =>
+    `.css-1rhbuit-multiValue >> text=${option}`,
 
+  /**
+   * Locator for currently selected value in a React single-select dropdown.
+   *
+   * Usage:
+   *   const locator = SelectMenuPageLocators.reactSelectedOptionLocator("Select Value");
+   *   const value = await page.textContent(locator);
+   *
+   * @param {string} dropdownLabel - The label text of the React dropdown.
+   * @returns {string} XPath locator for the currently selected option.
+   */
+  reactSelectedOptionLocator: (dropdownLabel: string): string =>
+    `//div[div[contains(text(), "${dropdownLabel}")]]/following-sibling::div[1]//div[contains(@class, "singleValue")]`,
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-/**
- * Returns the XPath locator for the Edit icon within a specific item row
- * on the Web Table Page web table.
- *
- * Example:
- *   WebTablePageLocators.webTableRowEditLocator("First Name")
- *   → //div[@role="row"][contains(normalize-space(.), "First Name")]//span[contains(@id, "edit-record")]
- *
- * @param {string} itemRowName - The name (or partial text) of the table row to locate.
- * @returns {string} XPath locator for the edit icon in the specified row.
- */
-webTableRowEditLocator: (itemRowName: string): string =>
-  `//div[@role="row"][contains(normalize-space(.), "${itemRowName.replace(/"/g, '\\"')}")]//span[contains(@id, "edit-record")]`,
-
-
-/**
- * Locator for all column headers
- */
-webTableColumnHeaderLocator: (): string => '//div[@role="columnheader"]',
-
-
-
-/**
- * Locator for a specific cell in a row by row name and column index
- * @param rowName - visible text in the row
- * @param columnIndex - 1-based index of the column
- */
-webTableCellLocator: (rowName: string, columnIndex: number): string =>
-  `//div[@role="row"][contains(normalize-space(.), "${rowName}")]//div[@role="gridcell"][${columnIndex}]`,
-
-
-/**
- * Locator for all rows in the web table
- */
-webTableRowsLocator: (): string => '//div[@class="rt-tr-group"][@role="rowgroup"][.//span[contains(@id, "edit-record")]]',
-
-
-
-/**
- * Locator for all rows in the web table
- */
-webTableRowFirstNameLocator: (): string => '(//div[@class="rt-tr-group"][@role="rowgroup"]/div[@role="row"][.//span[contains(@id, "edit-record")]]/div[@role="gridcell"][1])'
-
-  
+  /**
+   * Locator for standard dropdowns (<select>) by label.
+   *
+   * Usage:
+   *   const locator = SelectMenuPageLocators.dropdownStandardLocator("State");
+   *   await page.selectOption(locator, "California");
+   *
+   * @param {string} dropdownLabel - The label text of the standard dropdown.
+   * @returns {string} XPath locator for the <select> dropdown.
+   */
+  dropdownStandardLocator: (dropdownLabel: string): string =>
+    `//div[p[b[contains(text(), "${dropdownLabel}")]]]/select`,
 };
-
-
-
-//div[@class="rt-tr-group"][@role="rowgroup"][.//span[contains(@id, 'edit-record')]]
-// (//div[@class="rt-tr-group"][@role="rowgroup"]/div[@role="row"][.//span[contains(@id, 'edit-record')]]/div[@role="gridcell"][1])[1]
