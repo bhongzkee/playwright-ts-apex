@@ -1,0 +1,7 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","11490","Last Name Input Field Should Not Accept All Numbers","Chromium Browser","Tue Sep 30 10:39:33 PST 2025","failed","Tue Sep 30 10:39:45 PST 2025","Input Fields Valdations","ui/inputFieldsValidations.spec.ts","",""
+"","11486","First Name Input Field Should Not Accept All Numbers","Chromium Browser","Tue Sep 30 10:39:33 PST 2025","failed","Tue Sep 30 10:39:45 PST 2025","Input Fields Valdations","ui/inputFieldsValidations.spec.ts","",""
+"","11644","Terms and Conditions Checkbox Should Be Checked To Submit The Form","Chromium Browser","Tue Sep 30 10:39:46 PST 2025","failed","Tue Sep 30 10:39:57 PST 2025","Input Fields Valdations","ui/inputFieldsValidations.spec.ts","",""
+"","11141","Phone Number Input Field Should Not Accept Number and Letters","Chromium Browser","Tue Sep 30 10:39:46 PST 2025","failed","Tue Sep 30 10:39:57 PST 2025","Input Fields Valdations","ui/inputFieldsValidations.spec.ts","",""
+"","11487","Phone Number Input Field Should Not Accept All Letters","Chromium Browser","Tue Sep 30 10:39:33 PST 2025","failed","Tue Sep 30 10:39:45 PST 2025","Input Fields Valdations","ui/inputFieldsValidations.spec.ts","",""
+"","11168","Email Input Field Should Not Accept Invalid Format","Chromium Browser","Tue Sep 30 10:39:46 PST 2025","failed","Tue Sep 30 10:39:57 PST 2025","Input Fields Valdations","ui/inputFieldsValidations.spec.ts","",""

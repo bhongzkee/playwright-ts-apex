@@ -1,0 +1,6 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","6139","Email Input Field Should Not Accept Invalid Format","Chromium Browser","Tue Sep 30 09:45:00 PST 2025","failed","Tue Sep 30 09:45:06 PST 2025","Input Fields Valdations","ui/inputFieldsValidations.spec.ts","",""
+"","6415","First Name Input Field Should Not Accept All Numbers","Chromium Browser","Tue Sep 30 09:44:53 PST 2025","failed","Tue Sep 30 09:44:59 PST 2025","Input Fields Valdations","ui/inputFieldsValidations.spec.ts","",""
+"","6425","Phone Number Input Field Should Not Accept All Letters","Chromium Browser","Tue Sep 30 09:44:53 PST 2025","failed","Tue Sep 30 09:44:59 PST 2025","Input Fields Valdations","ui/inputFieldsValidations.spec.ts","",""
+"","6425","Last Name Input Field Should Not Accept All Numbers","Chromium Browser","Tue Sep 30 09:44:53 PST 2025","failed","Tue Sep 30 09:44:59 PST 2025","Input Fields Valdations","ui/inputFieldsValidations.spec.ts","",""
+"","6123","Phone Number Input Field Should Not Accept Number and Letters","Chromium Browser","Tue Sep 30 09:45:00 PST 2025","failed","Tue Sep 30 09:45:06 PST 2025","Input Fields Valdations","ui/inputFieldsValidations.spec.ts","",""

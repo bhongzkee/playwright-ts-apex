@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "CommonJS",
+    "strict": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "outDir": "dist",
+    "ignoreDeprecations": "6.0"
+  },
+  "include": ["src", "tests", "pages", "helperUtils", "locators"],
+  "exclude": ["dist"]
+}

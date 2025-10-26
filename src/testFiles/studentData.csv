@@ -1,0 +1,5 @@
+firstName,lastName,email,gender,mobile,dob,subjects,hobbies,address,state,city,file
+John,Test,Email@Test.com,Male,1234567890,16 Oct 2025,"Math,English","Sports,Reading",123 Test Address,NCR,Delhi,
+Jane,Doe,Jane@Test.com,Female,9876543210,10 Jan 1995,"Chemistry,Physics",Music,456 Sample St,Uttar Pradesh,Agra,testFileUpload.jpg
+NoSubject,Test,NoSubject@Test.com,Male,1234567890,16 Oct 2025,,"Sports,Reading",123 Test Address,NCR,Delhi,testFileUpload.jpg
+NoHobbies,Test,NoHobbies@Test.com,Female,1234567890,16 Oct 2025,"Math,English",,,Uttar Pradesh,,testFileUpload.jpg
