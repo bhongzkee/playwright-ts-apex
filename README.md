@@ -8,6 +8,7 @@ The framework is designed to:
 - Automate user actions and assertions across web pages with meaningful error message
 - Separate test logic from UI interactions
 - Run on multiple browsers (Chromium, Firefox, WebKit)
+- Ready Allure reporting setup (to be enable on config file)
 
 ---
 
